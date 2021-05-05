@@ -63,7 +63,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>docker.containers[{#CONTAINERNAME}, cpu]</key>
+                            <key>docker.containers[{#CONTAINERID}, cpu]</key>
                             <delay>60</delay>
                             <history>7</history>
                             <trends>365</trends>
@@ -107,7 +107,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>docker.containers[{#CONTAINERNAME}, mem]</key>
+                            <key>docker.containers[{#CONTAINERID}, mem]</key>
                             <delay>60</delay>
                             <history>7</history>
                             <trends>365</trends>
@@ -151,7 +151,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>docker.containers[{#CONTAINERNAME}, status]</key>
+                            <key>docker.containers[{#CONTAINERID}, status]</key>
                             <delay>60</delay>
                             <history>7</history>
                             <trends>365</trends>
@@ -194,7 +194,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template AX App Docker ACTIVE:docker.containers[{#CONTAINERNAME}, cpu].avg(15m)}&gt;90</expression>
+                            <expression>{Template AX App Docker ACTIVE:docker.containers[{#CONTAINERID}, cpu].avg(15m)}&gt;90</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Container {#CONTAINERNAME} on {HOST.NAME} CPU usage to high</name>
@@ -210,7 +210,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template AX App Docker ACTIVE:docker.containers[{#CONTAINERNAME}, status].max(#3)}&lt;10</expression>
+                            <expression>{Template AX App Docker ACTIVE:docker.containers[{#CONTAINERID}, status].max(#3)}&lt;10</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Container {#CONTAINERNAME}  on {HOST.NAME} not running</name>
@@ -290,7 +290,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>docker.containers[{#CONTAINERNAME}, cpu]</key>
+                            <key>docker.containers[{#CONTAINERID}, cpu]</key>
                             <delay>60</delay>
                             <history>7</history>
                             <trends>365</trends>
@@ -334,7 +334,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>docker.containers[{#CONTAINERNAME}, mem]</key>
+                            <key>docker.containers[{#CONTAINERID}, mem]</key>
                             <delay>60</delay>
                             <history>7</history>
                             <trends>365</trends>
@@ -378,7 +378,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>docker.containers[{#CONTAINERNAME}, status]</key>
+                            <key>docker.containers[{#CONTAINERID}, status]</key>
                             <delay>60</delay>
                             <history>7</history>
                             <trends>365</trends>
@@ -421,7 +421,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template AX App Docker PASSIVE:docker.containers[{#CONTAINERNAME}, cpu].avg(15m)}&gt;90</expression>
+                            <expression>{Template AX App Docker PASSIVE:docker.containers[{#CONTAINERID}, cpu].avg(15m)}&gt;90</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Container {#CONTAINERNAME} on {HOST.NAME} CPU usage to high</name>
@@ -437,7 +437,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template AX App Docker PASSIVE:docker.containers[{#CONTAINERNAME}, status].max(#3)}&lt;10</expression>
+                            <expression>{Template AX App Docker PASSIVE:docker.containers[{#CONTAINERID}, status].max(#3)}&lt;10</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Container {#CONTAINERNAME}  on {HOST.NAME} not running</name>
